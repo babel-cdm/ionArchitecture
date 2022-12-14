@@ -15,7 +15,17 @@ import {
 
 import { AppComponent } from './app.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeComponentModule),
+  },
+  {
+    path: '/',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
+];
 
 @NgModule({
   declarations: [AppComponent],
