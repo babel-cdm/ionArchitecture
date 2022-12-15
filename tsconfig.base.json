@@ -17,7 +17,10 @@
     "paths": {
       "@env": ["apps/my-app/src/environments/environment"],
       "@app/*": ["apps/my-app/src/app/*"],
-      "@app/login/*": ["apps/my-app/src/app/presentation/pages/login/*"]
+      "@app/login/*": ["apps/my-app/src/app/presentation/pages/login/*"],
+      "@ionic-arch/core/data/native-http": [
+        "libs/core/data/native-http/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
