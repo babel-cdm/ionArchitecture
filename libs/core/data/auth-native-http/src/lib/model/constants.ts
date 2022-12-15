@@ -1,0 +1,1 @@
+export const KEEP_ALIVE_SLEEP_TIME = 10; // seconds

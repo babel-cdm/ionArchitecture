@@ -1,4 +1,4 @@
-enum HttpStatusCode {
+export enum HttpStatusCode {
   CONTINUE = 100,
   SWITCHING_PROTOCOLS = 101,
   PROCESSING = 102,
@@ -61,5 +61,3 @@ enum HttpStatusCode {
   NOT_EXTENDED = 510,
   NETWORK_AUTHENTICATION_REQUIRED = 511
 }
-
-export default HttpStatusCode;
