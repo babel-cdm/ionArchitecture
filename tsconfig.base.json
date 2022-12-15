@@ -20,6 +20,9 @@
       "@app/login/*": ["apps/my-app/src/app/presentation/pages/login/*"],
       "@ionic-arch/core/data/native-http": [
         "libs/core/data/native-http/src/index.ts"
+      ],
+      "@ionic-arch/core/domain/auth-service": [
+        "libs/core/domain/auth-service/src/index.ts"
       ]
     }
   },
