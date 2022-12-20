@@ -1,8 +1,9 @@
 export const APP_ROUTES = {
-  HOME: 'home',
+  HOME: `home`,
+  LOGIN: `login`,
 };
 
-const BASE = "/";
 export const APP_ROUTES_GLOBAL = {
-  HOME: `${BASE}home`,
+  HOME: `/home`,
+  LOGIN: `/login`,
 };
