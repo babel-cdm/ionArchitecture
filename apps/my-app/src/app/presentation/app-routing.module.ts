@@ -16,12 +16,12 @@ import { APP_ROUTES } from './app-routes';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: APP_ROUTES.HOME,
+    redirectTo: APP_ROUTES.LOGIN,
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeComponentModule),
+    path: APP_ROUTES.LOGIN,
+    loadChildren: () => import('@app/login/presentation/login.module').then((m) => m.LoginModule),
   },
 ];
 
