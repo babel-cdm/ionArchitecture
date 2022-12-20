@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import {
   PreloadAllModules,
@@ -9,34 +8,30 @@ import {
 } from '@angular/router';
 
 import {
-  IonicModule,
   IonicRouteStrategy
 } from '@ionic/angular';
 
-import { AppComponent } from './app.component';
+import { APP_ROUTES } from './app-routes';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeComponentModule),
+    path: '',
+    redirectTo: APP_ROUTES.LOGIN,
+    pathMatch: 'full'
   },
   {
-    path: '/',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  }
+    path: APP_ROUTES.LOGIN,
+    loadChildren: () => import('@app/login/presentation/login.module').then((m) => m.LoginModule),
+  },
 ];
 
 @NgModule({
-  declarations: [AppComponent],
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(),
     RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})
   ],
   providers: [
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
   ],
-  bootstrap: [AppComponent],
+  exports: [RouterModule],
 })
-export class AppModule {}
+export class AppRoutingModule {}

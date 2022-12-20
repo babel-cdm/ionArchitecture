@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@app/*": ["apps/my-app/src/app/*"],
+      "@app/login/*": ["apps/my-app/src/app/presentation/pages/login/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
