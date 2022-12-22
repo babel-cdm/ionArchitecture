@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@env": ["apps/my-app/src/environments/environment"],
       "@app/*": ["apps/my-app/src/app/*"],
       "@app/login/*": ["apps/my-app/src/app/presentation/pages/login/*"]
     }
