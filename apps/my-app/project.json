@@ -116,6 +116,21 @@
         "jestConfig": "apps/my-app/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "open": {
+      "executor": "nx:run-commands",
+      "options": {
+          "command": "npx cap open",
+          "cwd": "apps/my-app"
+      },
+      "configurations": {
+          "ios": {
+               "cmd": "npx cap open ios"
+          },
+          "android": {
+              "cmd": "npx cap open android"
+          }
+      }
     }
   },
   "tags": []
