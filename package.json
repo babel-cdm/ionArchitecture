@@ -16,6 +16,7 @@
     "@angular/cli": "15.0.0",
     "@angular/compiler-cli": "15.0.0",
     "@angular/language-service": "15.0.0",
+    "@ionic/cli": "6.20.6",
     "@nrwl/angular": "15.3.3",
     "@nrwl/cypress": "15.3.3",
     "@nrwl/eslint-plugin-nx": "15.3.3",
