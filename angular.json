@@ -27,10 +27,48 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "apps/my-app/src/favicon.ico",
-              "apps/my-app/src/assets"
+              "apps/my-app/src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
             ],
             "styles": [
-              "apps/my-app/src/styles.scss"
+              "apps/my-app/src/styles.scss",
+              {
+                "input": "node_modules/@ionic/angular/css/core.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/normalize.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/structure.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/typography.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/display.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/padding.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/float-elements.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/text-alignment.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/text-transformation.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/flex-utils.css"
+              },
+              {
+                "input": "apps/my-app/src/theme/variables.css"
+              }
             ],
             "scripts": []
           },
@@ -90,12 +128,41 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "apps/my-app/src/favicon.ico",
-              "apps/my-app/src/assets"
+              "apps/my-app/src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
             ],
             "styles": [
               "apps/my-app/src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "my-app:ionic-cordova-build",
+            "devServerTarget": "my-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "my-app:ionic-cordova-build:production",
+              "devServerTarget": "my-app:serve:production"
+            }
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/angular-toolkit:cordova-build",
+          "options": {
+            "browserTarget": "my-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "my-app:build:production"
+            }
           }
         }
       }
