@@ -13,6 +13,9 @@
           "development": {
                "cmd": "npx ng build my-app -c=development"
           },
+          "preproduction": {
+            "cmd": "npx ng build my-app -c=preproduction"
+          },
           "production": {
               "cmd": "npx ng build my-app -c=production"
           }
@@ -27,6 +30,9 @@
       "configurations": {
           "development": {
                "cmd": "npx ng serve my-app -c=development"
+          },
+          "preproduction": {
+            "cmd": "npx ng serve my-app -c=preproduction"
           },
           "production": {
               "cmd": "npx ng serve my-app -c=production"

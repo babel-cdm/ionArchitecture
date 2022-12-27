@@ -9,12 +9,14 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
-    "lib": ["ES2022", "dom"],
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "paths": {}
+    "paths": {
+      "@my-app/env": ["apps/my-app/src/environments/environment"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
