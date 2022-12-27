@@ -2,7 +2,9 @@
   "projects": {
     "my-app": {
       "name": "app",
-      "integrations": {},
+      "integrations": {
+        "capacitor": {}
+      },
       "type": "angular",
       "root": "apps/my-app"
     }
