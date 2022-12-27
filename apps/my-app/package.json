@@ -3,6 +3,9 @@
   "scripts": {
     "ion:open": "ionic cap open --project=my-app",
 
+    "ion:serve:mock": "ionic serve --project=my-app",
+    "ion:serve:pre": "ionic serve --configuration=preproduction --project=my-app",
+
     "ion:run:ios:mock": "ionic cap run ios --livereload --external --project=my-app",
     "ion:run:ios:pre": "ionic cap run ios --configuration=preproduction --livereload --external --project=my-app",
     "ion:run:android:mock": "ionic cap run android --livereload --external --project=my-app",

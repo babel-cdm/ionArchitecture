@@ -11,18 +11,24 @@ import {
   IonicRouteStrategy
 } from '@ionic/angular';
 
+import { APP_ROUTES } from './app-routes';
+
 import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: APP_ROUTES.HOME,
     pathMatch: 'full'
   },
   {
-    path: 'home',
+    path: APP_ROUTES.HOME,
     component: HomeComponent
+  },
+  {
+    path: APP_ROUTES.LOGIN,
+    loadChildren: () => import('@my-app/login/presentation/login.module').then( m => m.LoginModule)
   },
 ];
 

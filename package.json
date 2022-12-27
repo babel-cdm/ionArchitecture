@@ -13,6 +13,8 @@
   },
   "scripts": {
     "my-app:open": "npm run ion:open --workspace my-app",
+    "my-app:serve:mock": "npm run ion:serve:mock --workspace=my-app",
+    "my-app:serve:pre": "npm run ion:serve:pre --workspace=my-app",
     "my-app:run:ios:mock": "npm run ion:run:ios:mock --workspace my-app",
     "my-app:run:ios:pre": "npm run ion:run:ios:pre --workspace my-app",
     "my-app:run:android:mock": "npm run ion:run:android:mock --workspace my-app",
