@@ -1,0 +1,13 @@
+{
+  "name": "my-app",
+  "dependencies": {
+    "@capacitor/app": "4.1.1",
+    "@capacitor/core": "4.6.1",
+    "@capacitor/haptics": "4.1.0",
+    "@capacitor/keyboard": "4.1.0",
+    "@capacitor/status-bar": "4.1.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "4.6.1"
+  }
+}
