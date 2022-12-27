@@ -11,6 +11,19 @@
     "node": "18.12.1",
     "npm": "8.19.2"
   },
+  "scripts": {
+    "my-app:open": "npm run ion:open --workspace my-app",
+    "my-app:run:ios:mock": "npm run ion:run:ios:mock --workspace my-app",
+    "my-app:run:ios:pre": "npm run ion:run:ios:pre --workspace my-app",
+    "my-app:run:android:mock": "npm run ion:run:android:mock --workspace my-app",
+    "my-app:run:android:pre": "npm run ion:run:android:pre --workspace my-app",
+    "my-app:build:ios:mock": "npm run my-app:build:ios:mock --workspace my-app",
+    "my-app:build:ios:pre": "npm run my-app:build:ios:pre --workspace my-app",
+    "my-app:build:ios:prod": "npm run my-app:build:ios:prod --project=my-app",
+    "my-app:build:android:mock": "npm run my-app:build:android:mock --workspace my-app",
+    "my-app:build:android:pre": "npm run my-app:build:android:pre --workspace my-app",
+    "my-app:build:android:prod": "npm run my-app:build:android:prod --workspace my-app"
+  },
   "dependencies": {
     "@angular/animations": "15.0.4",
     "@angular/common": "15.0.4",

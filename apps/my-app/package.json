@@ -1,5 +1,20 @@
 {
   "name": "my-app",
+  "scripts": {
+    "ion:open": "ionic cap open --project=my-app",
+
+    "ion:run:ios:mock": "ionic cap run ios --configuration=mock --livereload --external --project=my-app",
+    "ion:run:ios:pre": "ionic cap run ios --configuration=preproduction --livereload --external --project=my-app",
+    "ion:run:android:mock": "ionic cap run android --configuration=mock --livereload --external --project=my-app",
+    "ion:run:android:pre": "ionic cap run android --configuration=preproduction -livereload --external --project=my-app",
+
+    "ion:build:ios:mock": "ionic capacitor build ios --configuration=mock --project=my-app",
+    "ion:build:ios:pre": "ionic capacitor build ios --configuration=preproduction --project=my-app",
+    "ion:build:ios:prod": "ionic capacitor build ios --configuration=production --prod --release --project=my-app",
+    "ion:build:android:mock": "ionic capacitor build android --configuration=mock --project=my-app",
+    "ion:build:android:pre": "ionic capacitor build android --configuration=preproduction --project=my-app",
+    "ion:build:android:prod": "ionic capacitor build android --configuration=production --prod --release --project=my-app"
+  },
   "dependencies": {
     "@capacitor/android": "4.6.1",
     "@capacitor/app": "4.1.1",
