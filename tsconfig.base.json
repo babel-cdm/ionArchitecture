@@ -14,9 +14,7 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "paths": {
-      "@my-app/env": ["apps/my-app/src/environments/environment"]
-    }
+    "paths": {}
   },
   "exclude": ["node_modules", "tmp"]
 }

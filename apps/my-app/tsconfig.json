@@ -10,6 +10,12 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@my-app/env": ["apps/my-app/src/environments/environment"],
+      "@my-app/data/*": ["apps/my-app/src/app/data/*"],
+      "@my-app/presentation/*": ["apps/my-app/src/app/presentation/*"],
+      "@my-app/domain/*": ["apps/my-app/src/app/domain/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
