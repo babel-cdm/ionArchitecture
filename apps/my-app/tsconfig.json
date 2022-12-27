@@ -14,7 +14,10 @@
       "@my-app/env": ["apps/my-app/src/environments/environment"],
       "@my-app/data/*": ["apps/my-app/src/app/data/*"],
       "@my-app/presentation/*": ["apps/my-app/src/app/presentation/*"],
-      "@my-app/domain/*": ["apps/my-app/src/app/domain/*"]
+      "@my-app/domain/*": ["apps/my-app/src/app/domain/*"],
+      "@my-app/login/data/*": ["apps/my-app/src/app/presentation/pages/login/data/*"],
+      "@my-app/login/presentation/*": ["apps/my-app/src/app/presentation/pages/login/presentation/*"],
+      "@my-app/login/domain/*": ["apps/my-app/src/app/presentation/pages/login/domain/*"]
     }
   },
   "angularCompilerOptions": {

@@ -26,6 +26,10 @@ const routes: Routes = [
     path: APP_ROUTES.HOME,
     component: HomeComponent
   },
+  {
+    path: APP_ROUTES.LOGIN,
+    loadChildren: () => import('@my-app/login/presentation/login.module').then( m => m.LoginModule)
+  },
 ];
 
 @NgModule({
