@@ -1,4 +1,8 @@
-import axios, { AxiosResponse } from "axios";
+import {
+  CapacitorHttp,
+  HttpResponse as CapacitorHttpResponse
+} from '@capacitor/core';
+
 import type { HttpInterfaceService } from "./HttpInterfaceService";
 
 import type {
@@ -8,7 +12,12 @@ import type {
   HttpPostRequest,
   HttpPutRequest,
   HttpBasicHeader
-} from "./model/HttpRequest.types";
+} from "./model/request/HttpRequestModel";
+
+import type { HttpResponse } from "./model/response/HttpResponseModel";
+
+import { HttpErrorResponseMapper } from "./mapper/response/HttpErrorResponseMapper";
+import { HttpSuccessResponseMapper } from "./mapper/response/HttpSuccessResponseMapper";
 
 const DEFAULT_HTTP_HEADER: HttpBasicHeader = {
   Accept: "application/json",
@@ -18,48 +27,94 @@ const DEFAULT_HTTP_HEADER: HttpBasicHeader = {
 
 export class HttpService implements HttpInterfaceService {
 
-  get<T>({endpoint, headers}: HttpGetRequest): Promise<AxiosResponse<T>> {
-    return axios.get<T>(endpoint, {
-      headers: {
-        ...DEFAULT_HTTP_HEADER,
-        ...headers,
-      },
-    });
+  private dispatchRequest<T>(promise: Promise<CapacitorHttpResponse>): Promise<HttpResponse<T>>{
+
+    const validateStatus = (status: number) => {
+      return status >= 200 && status < 300;
+    };
+
+    return new Promise((resolve, reject) => {
+      promise
+      .then((response: CapacitorHttpResponse) => {
+        if(validateStatus(response.status)){
+          resolve(
+            HttpSuccessResponseMapper.fromResponse<T>(response)
+          );
+        }
+        else{
+          reject(
+            HttpErrorResponseMapper.fromResponse<T>(`Invalid Status`, response)
+          )
+        }
+      })
+      .catch((error: Error) => {
+        reject(
+          HttpErrorResponseMapper.fromResponse(`Capacitor Error: ${error.message}`)
+        )
+      })
+    })
   }
 
-  post<T>({endpoint, headers, body}: HttpPostRequest): Promise<AxiosResponse<T>> {
-    return axios.post<T>(endpoint, body, {
-      headers: {
-        ...DEFAULT_HTTP_HEADER,
-        ...headers,
-      },
-    });
+  get<T>({endpoint, headers}: HttpGetRequest): Promise<HttpResponse<T>> {
+    return this.dispatchRequest<T>(
+      CapacitorHttp.get({
+        url: endpoint,
+        headers: {
+          ...DEFAULT_HTTP_HEADER,
+          ...headers,
+        }
+      })
+    )
   }
 
-  put<T>({endpoint, headers, body}: HttpPutRequest): Promise<AxiosResponse<T>> {
-    return axios.put<T>(endpoint, body, {
-      headers: {
-        ...DEFAULT_HTTP_HEADER,
-        ...headers,
-      },
-    });
+  post<T>({endpoint, headers, body}: HttpPostRequest): Promise<HttpResponse<T>> {
+    return this.dispatchRequest<T>(
+      CapacitorHttp.post({
+        url: endpoint,
+        data: body,
+        headers: {
+          ...DEFAULT_HTTP_HEADER,
+          ...headers,
+        }
+      })
+    )
   }
 
-  patch<T>({endpoint, headers, body}: HttpPatchRequest): Promise<AxiosResponse<T>> {
-    return axios.patch<T>(endpoint, body, {
-      headers: {
-        ...DEFAULT_HTTP_HEADER,
-        ...headers,
-      },
-    });
+  put<T>({endpoint, headers, body}: HttpPutRequest): Promise<HttpResponse<T>> {
+    return this.dispatchRequest<T>(
+      CapacitorHttp.put({
+        url: endpoint,
+        data: body,
+        headers: {
+          ...DEFAULT_HTTP_HEADER,
+          ...headers,
+        }
+      })
+    )
   }
 
-  delete({endpoint, headers}: HttpDeleteRequest): Promise<AxiosResponse> {
-    return axios.delete(endpoint, {
-      headers: {
-        ...DEFAULT_HTTP_HEADER,
-        ...headers,
-      },
-    });
+  patch<T>({endpoint, headers, body}: HttpPatchRequest): Promise<HttpResponse<T>> {
+    return this.dispatchRequest<T>(
+      CapacitorHttp.patch({
+        url: endpoint,
+        data: body,
+        headers: {
+          ...DEFAULT_HTTP_HEADER,
+          ...headers,
+        }
+      })
+    )
+  }
+
+  delete<T>({endpoint, headers}: HttpDeleteRequest): Promise<HttpResponse<T>> {
+    return this.dispatchRequest<T>(
+      CapacitorHttp.delete({
+        url: endpoint,
+        headers: {
+          ...DEFAULT_HTTP_HEADER,
+          ...headers,
+        }
+      })
+    )
   }
 }
