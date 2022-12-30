@@ -1,1 +1,3 @@
-export * from './lib/core-data-plugin-native-http';
+import { HttpFactory } from "@native-cap-http/factory/HttpServiceFactory";
+
+export const http = HttpFactory.getInstance();
