@@ -150,6 +150,7 @@
           }
         }
       }
-    }
+    },
+    "core-data-plugin-native-http": "libs/core/data/plugin/native-http"
   }
 }
