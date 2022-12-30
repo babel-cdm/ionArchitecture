@@ -7,14 +7,14 @@ export interface HttpBasicHeader extends HttpHeader {
   "Cache-Control": string; // "no-cache"
 };
 
-interface HttpParams {
+export interface HttpRequest {
   endpoint: string,
+  headers: HttpHeader
   body?: HttpBody,
-  headers?: HttpHeader
 }
 
-export type HttpGetRequest = Omit<HttpParams, 'body'>;
-export type HttpPostRequest = HttpParams;
-export type HttpPutRequest = HttpParams;
-export type HttpPatchRequest= HttpParams;
-export type HttpDeleteRequest = Omit<HttpParams, 'body'>;
+export type HttpGetRequest = Omit<HttpRequest, 'body'>;
+export type HttpPostRequest = HttpRequest;
+export type HttpPutRequest = HttpRequest;
+export type HttpPatchRequest= HttpRequest;
+export type HttpDeleteRequest = Omit<HttpRequest, 'body'>;
