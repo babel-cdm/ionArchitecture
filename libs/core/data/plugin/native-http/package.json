@@ -1,5 +1,8 @@
 {
   "name": "core-data-plugin-native-http",
   "version": "0.0.1",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "@capacitor/core": "4.6.1"
+  }
 }
