@@ -14,7 +14,11 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "paths": {}
+    "paths": {
+      "@core/data/plugin/NativeHttp": [
+        "libs/core/data/plugin/native-http/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

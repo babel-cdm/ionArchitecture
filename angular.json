@@ -3,6 +3,46 @@
   "version": 1,
   "newProjectRoot": "./apps",
   "projects": {
+    "core-data-plugin-native-http": {
+      "root": "libs/core/data/plugin/native-http",
+      "sourceRoot": "libs/core/data/plugin/native-http/src",
+      "projectType": "library",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/webpack:webpack",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/core/data/plugin/native-http",
+            "main": "libs/core/data/plugin/native-http/src/index.ts",
+            "tsConfig": "libs/core/data/plugin/native-http/tsconfig.lib.json",
+            "assets": []
+          }
+        },
+        "publish": {
+          "builder": "nx:run-commands",
+          "options": {
+            "command": "node tools/scripts/publish.mjs core-data-plugin-native-http {args.ver} {args.tag}"
+          },
+          "dependsOn": ["build"]
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/core/data/plugin/native-http/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+          "options": {
+            "jestConfig": "libs/core/data/plugin/native-http/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
     "my-app": {
       "projectType": "application",
       "schematics": {
