@@ -1,3 +1,3 @@
-import { HttpFactory } from "@native-cap-http/factory/HttpServiceFactory";
+import { HttpFactory } from "@native-http/factory/HttpServiceFactory";
 
 export const http = HttpFactory.getInstance();

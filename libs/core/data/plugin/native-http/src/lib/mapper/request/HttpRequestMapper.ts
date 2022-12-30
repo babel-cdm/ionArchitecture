@@ -1,4 +1,4 @@
-import { HttpBasicHeader, HttpRequest } from "@native-cap-http/model/request/HttpRequestModel";
+import { HttpBasicHeader, HttpRequest } from "@native-http/model/request/HttpRequestModel";
 import { HttpOptions as CapacitorHttpOptions} from '@capacitor/core';
 
 

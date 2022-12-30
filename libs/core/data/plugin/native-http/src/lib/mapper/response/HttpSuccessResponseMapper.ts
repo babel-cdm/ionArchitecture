@@ -1,5 +1,5 @@
-import { HttpSuccessResponse } from "@native-cap-http/model/response/HttpResponseModel";
-import HttpStatusCode from "@native-cap-http/model/response/HttpStatusModel";
+import { HttpSuccessResponse } from "@native-http/model/response/HttpResponseModel";
+import HttpStatusCode from "@native-http/model/response/HttpStatusModel";
 
 import { HttpResponse as CapacitorHttpResponse} from '@capacitor/core';
 

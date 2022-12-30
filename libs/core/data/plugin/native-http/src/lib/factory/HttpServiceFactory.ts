@@ -1,6 +1,6 @@
 
-import { HttpInterfaceService } from "@native-cap-http/HttpInterfaceService";
-import { NativeCapHttp } from "@native-cap-http/NativeCapHttp";
+import { HttpInterfaceService } from "@native-http/HttpInterfaceService";
+import { NativeCapHttp } from "@native-http/NativeCapHttp";
 
 
 class HttpSinglentonFactory {

@@ -9,7 +9,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@native-cap-http/*": ["libs/core/data/plugin/native-http/src/lib/*"]
+      "@native-http/*": ["libs/core/data/plugin/native-http/src/lib/*"]
     }
   },
   "files": [],
