@@ -7,10 +7,7 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "paths": {
-      "@native-http/*": ["libs/core/data/plugin/native-http/src/lib/*"]
-    }
+    "noFallthroughCasesInSwitch": true
   },
   "files": [],
   "include": [],

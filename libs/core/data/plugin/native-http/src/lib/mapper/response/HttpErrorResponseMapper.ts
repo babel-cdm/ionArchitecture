@@ -1,5 +1,5 @@
-import { HttpErrorResponse } from "@native-http/model/response/HttpResponseModel";
-import { HttpSuccessResponseMapper } from "@native-http/mapper/response/HttpSuccessResponseMapper";
+import { HttpErrorResponse } from "../../model/response/HttpResponseModel";
+import { HttpSuccessResponseMapper } from "../../mapper/response/HttpSuccessResponseMapper";
 
 import { HttpResponse as CapacitorHttpResponse} from '@capacitor/core';
 
