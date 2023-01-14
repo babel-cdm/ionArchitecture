@@ -24,6 +24,9 @@
       "@my-app/login/domain/*": ["apps/my-app/src/app/presentation/pages/login/domain/*"],
       "@core/data/plugin/NativeHttp": [
         "libs/core/data/plugin/native-http/src/index.ts"
+      ],
+      "@core/utils/*": [
+        "libs/core/utils/*"
       ]
     }
   },
