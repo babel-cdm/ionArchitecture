@@ -1,0 +1,94 @@
+{
+  "uuid": "595f9120-cfec-46bd-a7ec-566038d71009",
+  "lastMigration": 25,
+  "name": "Api mock",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "0.0.0.0",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "341a3a5a-5a0a-4ba9-8e7d-7baed4b62f42",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "todos",
+      "responses": [
+        {
+          "uuid": "f3b5c7d4-ed2b-4f40-bb76-c3592d68b89b",
+          "body": "[\n  {\n    \"id\": 1,\n    \"title\": \"Finish the Free Code Camp curriculum!\",\n    \"completed\": false\n  },\n  {\n    \"id\": 2,\n    \"title\": \"Sleep more. Jose\",\n    \"completed\": false\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "4c062610-2dc1-422a-be31-2dd5155a4918",
+          "body": "",
+          "latency": 0,
+          "statusCode": 204,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "341a3a5a-5a0a-4ba9-8e7d-7baed4b62f42"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": []
+}
