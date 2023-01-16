@@ -3,7 +3,7 @@ import {
   HttpResponse as CapacitorHttpResponse
 } from '@capacitor/core';
 
-import type { HttpInterfaceService } from "@native-http/HttpInterfaceService";
+import type { HttpInterfaceService } from "./HttpInterfaceService";
 
 import type {
   HttpDeleteRequest,
@@ -11,13 +11,13 @@ import type {
   HttpPatchRequest,
   HttpPostRequest,
   HttpPutRequest,
-} from "@native-http/model/request/HttpRequestModel";
+} from "./model/request/HttpRequestModel";
 
-import type { HttpResponse } from "@native-http/model/response/HttpResponseModel";
+import type { HttpResponse } from "./model/response/HttpResponseModel";
 
-import { HttpErrorResponseMapper } from "@native-http/mapper/response/HttpErrorResponseMapper";
-import { HttpSuccessResponseMapper } from "@native-http/mapper/response/HttpSuccessResponseMapper";
-import { HttpRequestMapper } from "@native-http/mapper/request/HttpRequestMapper";
+import { HttpErrorResponseMapper } from "./mapper/response/HttpErrorResponseMapper";
+import { HttpSuccessResponseMapper } from "./mapper/response/HttpSuccessResponseMapper";
+import { HttpRequestMapper } from "./mapper/request/HttpRequestMapper";
 
 
 export class NativeCapHttp implements HttpInterfaceService {

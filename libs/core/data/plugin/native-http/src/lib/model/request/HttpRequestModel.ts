@@ -9,7 +9,7 @@ export interface HttpBasicHeader extends HttpHeader {
 
 export interface HttpRequest {
   endpoint: string,
-  headers: HttpHeader
+  headers?: HttpHeader
   body?: HttpBody,
 }
 

@@ -1,4 +1,4 @@
-import { HttpResponse } from "@native-http/model/response/HttpResponseModel";
+import { HttpResponse } from "./model/response/HttpResponseModel";
 
 import type {
   HttpDeleteRequest,
@@ -6,7 +6,7 @@ import type {
   HttpPatchRequest,
   HttpPostRequest,
   HttpPutRequest,
-} from "@native-http/model/request/HttpRequestModel";
+} from "./model/request/HttpRequestModel";
 
 export interface HttpInterfaceService {
   get<T>({endpoint, headers}: HttpGetRequest): Promise<HttpResponse<T>>;

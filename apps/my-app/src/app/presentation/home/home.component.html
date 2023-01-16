@@ -18,4 +18,18 @@
   <ion-button color="medium">Medium</ion-button>
   <ion-button color="dark">Dark</ion-button>
 
+  <ion-title>
+    <ng-container *ngIf="models$ | async as models; else loading">
+      <ion-list>
+        <ion-item *ngFor="let model of models">
+          <ion-label>{{model.title}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ng-container>
+  </ion-title>
+
+  <ng-template #loading>
+    <h1>loading ...</h1>
+  </ng-template>
+
 </ion-content>

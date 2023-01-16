@@ -1,3 +1,10 @@
-import { HttpFactory } from "@native-http/factory/HttpServiceFactory";
+import { HttpFactory } from "./lib/factory/HttpServiceFactory";
+import { HttpInterfaceService } from "./lib/HttpInterfaceService"; 
+import { HttpErrorResponse, HttpSuccessResponse } from "./lib/model/response/HttpResponseModel";
 
-export const http = HttpFactory.getInstance();
+export { 
+    HttpInterfaceService,
+    HttpErrorResponse, 
+    HttpSuccessResponse
+}; 
+export default HttpFactory.getInstance();

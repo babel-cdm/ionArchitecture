@@ -1,6 +1,10 @@
 {
   "name": "my-app",
   "scripts": {
+    "mock:start": "npx mockoon-cli start --data ./src/mock/api-mock.json",
+    "mock:list": "npx mockoon-cli list",
+    "mock:stop": "npx mockoon-cli stop",
+
     "ion:open": "ionic cap open --project=my-app",
 
     "ion:serve:mock": "ionic serve --project=my-app",

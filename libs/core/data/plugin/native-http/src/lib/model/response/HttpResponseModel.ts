@@ -1,4 +1,4 @@
-import { HttpHeader } from "@native-http/model/request/HttpRequestModel";
+import { HttpHeader } from "../../model/request/HttpRequestModel";
 
 export interface HttpSuccessResponse<T>  {
   status: number;
