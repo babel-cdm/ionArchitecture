@@ -24,7 +24,9 @@
     "my-app:build:ios:prod": "npm run ion:build:ios:prod --workspace=my-app",
     "my-app:build:android:mock": "npm run ion:build:android:mock --workspace my-app",
     "my-app:build:android:pre": "npm run ion:build:android:pre --workspace my-app",
-    "my-app:build:android:prod": "npm run ion:build:android:prod --workspace my-app"
+    "my-app:build:android:prod": "npm run ion:build:android:prod --workspace my-app",
+    "storybook": "ng run my-app:storybook",
+    "build-storybook": "ng run my-app:build-storybook"
   },
   "dependencies": {
     "@angular/animations": "15.1.2",
@@ -54,7 +56,13 @@
     "@nrwl/linter": "15.6.2",
     "@nrwl/webpack": "15.6.2",
     "@nrwl/workspace": "15.6.2",
+    "@storybook/addon-essentials": "7.0.0-beta.35",
+    "@storybook/addon-interactions": "7.0.0-beta.35",
+    "@storybook/addon-links": "7.0.0-beta.35",
+    "@storybook/angular": "7.0.0-beta.35",
+    "@storybook/blocks": "7.0.0-beta.35",
     "@storybook/cli": "7.0.0-beta.35",
+    "@storybook/testing-library": "0.0.13",
     "@types/jasmine": "4.3.0",
     "@types/jest": "28.1.1",
     "@types/node": "16.11.7",
@@ -72,6 +80,9 @@
     "karma-jasmine-html-reporter": "2.0.0",
     "nx": "15.6.2",
     "prettier": "2.6.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "storybook": "7.0.0-beta.35",
     "ts-jest": "28.0.5",
     "ts-node": "10.9.1",
     "typescript": "4.8.2"
