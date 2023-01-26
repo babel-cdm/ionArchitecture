@@ -5,6 +5,9 @@
     "mock:list": "npx mockoon-cli list",
     "mock:stop": "npx mockoon-cli stop",
 
+    "sb:start": "npx ng run my-app:storybook",
+    "sb:build": "storybook build",
+
     "ion:open": "ionic cap open --project=my-app",
 
     "ion:serve:mock": "ionic serve --project=my-app",

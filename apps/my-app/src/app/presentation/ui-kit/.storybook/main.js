@@ -1,19 +1,28 @@
-const path = require('path');
 module.exports = {
-  "stories": [
-    "../stories/**/*.mdx",
-    "../stories/**/*.stories.@(js|jsx|ts|tsx)"
+  stories: [
+    "../**/*.mdx",
+    "../**/*.stories.mdx",
+    "../**/*.stories.@(js|jsx|ts|tsx)"
   ],
-  "addons": [
+  addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions"
   ],
-  "framework": {
-    "name": "@storybook/angular",
+  framework: {
+    name: "@storybook/angular",
     "options": {}
   },
-  "docs": {
+  core: { 
+    builder: 'webpack5'
+  },
+  docs: {
     "autodocs": "tag"
-  }
+  },
+  // uncomment the property below if you want to apply some webpack config
+  // webpackFinal: async (config, { configType }) => {
+  //   // Make whatever fine-grained changes you need that should apply to all storybook configs
+  //   // Return the altered config
+  //   return config;
+  // },
 }

@@ -10,7 +10,7 @@
           "style": "scss"
         }
       },
-      "root": "apps/my-app",
+      "root": "apps/my-app", 
       "sourceRoot": "apps/my-app/src",
       "prefix": "app",
       "architect": {
@@ -26,8 +26,16 @@
             "tsConfig": "apps/my-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "apps/my-app/src/favicon.ico",
-              "apps/my-app/src/assets",
+              {
+                "glob": "favicon.ico",
+                "input": "src/",
+                "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "apps/my-app/src/assets" ,
+                "output": "assets"
+              },
               {
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
@@ -159,23 +167,36 @@
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
-            "configDir": "apps/my-app/.storybook",
+            "port": 4600,
+            "configDir": "./src/app/presentation/ui-kit/.storybook",
             "browserTarget": "my-app:build",
-            "compodoc": false,
-            "port": 6006
+            "compodoc": false
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
           }
         },
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",
           "options": {
-            "configDir": "apps/my-app/.storybook",
+            "outputDir": "dist/storybook/my-app",
+            "configDir": "./src/app/presentation/ui-kit/.storybook",
             "browserTarget": "my-app:build",
-            "compodoc": false,
-            "outputDir": "storybook-static"
+            "compodoc": false
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
           }
         }
       }
     },
     "core-data-plugin-native-http": "libs/core/data/plugin/native-http"
+  },
+  "cli": {
+    "analytics": false
   }
 }

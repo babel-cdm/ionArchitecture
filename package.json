@@ -14,6 +14,7 @@
   "scripts": {
     "my-app:open": "npm run ion:open --workspace my-app",
     "my-app:serve:mock": "npm run ion:serve:mock --workspace=my-app",
+    "my-app:storybook": "npm run sb:start --workspace my-app",
     "my-app:serve:pre": "npm run ion:serve:pre --workspace=my-app",
     "my-app:run:ios:mock": "npm run ion:run:ios:mock --workspace my-app",
     "my-app:run:ios:pre": "npm run ion:run:ios:pre --workspace my-app",
@@ -24,9 +25,7 @@
     "my-app:build:ios:prod": "npm run ion:build:ios:prod --workspace=my-app",
     "my-app:build:android:mock": "npm run ion:build:android:mock --workspace my-app",
     "my-app:build:android:pre": "npm run ion:build:android:pre --workspace my-app",
-    "my-app:build:android:prod": "npm run ion:build:android:prod --workspace my-app",
-    "storybook": "ng run my-app:storybook",
-    "build-storybook": "ng run my-app:build-storybook"
+    "my-app:build:android:prod": "npm run ion:build:android:prod --workspace my-app"
   },
   "dependencies": {
     "@angular/animations": "15.1.2",
