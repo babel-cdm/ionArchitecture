@@ -12,7 +12,7 @@
       },
       "root": "apps/my-app",
       "sourceRoot": "apps/my-app/src",
-      "prefix": "app",
+      "prefix": "my-app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -168,13 +168,17 @@
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",
           "options": {
+            "outputDir": "dist/storybook/my-app",
             "configDir": "apps/my-app/.storybook",
             "browserTarget": "my-app:build",
-            "compodoc": false,
-            "outputDir": "storybook-static"
+            "compodoc": false
           }
         }
       }
-    }
+    },
+    "core-data-plugin-native-http": "libs/core/data/plugin/native-http"
+  },
+  "cli": {
+    "analytics": false
   }
 }
